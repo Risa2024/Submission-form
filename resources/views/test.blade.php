@@ -9,5 +9,15 @@
     <div>
         <!-- ここにコンテンツを追加 -->
     </div>
+
+    @if(Auth::check())
+        <div>
+            {{ Auth::user()->name }}さん、こんにちは。
+        </div>
+    @else
+        <div>
+            ゲストさん、こんにちは。
+        </div>
+    @endif
 </body>
 </html> 
