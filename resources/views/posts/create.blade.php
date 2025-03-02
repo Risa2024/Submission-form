@@ -23,7 +23,7 @@
                         id="title"
                         name="title"
                         placeholder="件名を入力してください"
-                        class="w-auto py-2 border border-gray-300 round-md"
+                        class="w-auto py-2 border border-gray-300 rounded-md"
                         value="{{ old('title') }}"
                     >
                 </div>
