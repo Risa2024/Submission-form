@@ -20,4 +20,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/test', [TestController::class, 'test'])->name('test');
 
+Route::get('/posts/create', function () {
+    return view('posts.create');
+})->middleware(['auth'])->name('posts.create');
+
 require __DIR__.'/auth.php';
