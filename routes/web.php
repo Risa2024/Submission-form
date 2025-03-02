@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,9 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/test', [TestController::class, 'test'])->name('test');
-
-Route::get('/posts/create', function () {
-    return view('posts.create');
-})->middleware(['auth'])->name('posts.create');
+Route::get('posts/create', [PostController::class, 'create'])->middleware(['auth'])->name('posts.create');
 
 require __DIR__.'/auth.php';

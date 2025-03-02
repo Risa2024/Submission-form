@@ -27,7 +27,7 @@
                         name="body"
                         rows="5"
                         placeholder="本文を入力してください"
-                        class="w-auto py-2 border border-gray-300 round-md">
+                        class="w-full py-2 border border-gray-300 rounded-md">
                     </textarea>
             </div>
 
