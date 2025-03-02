@@ -52,7 +52,8 @@ services:
             retries: 3
             timeout: 5s
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: arm64v8/phpmyadmin:latest
+        platform: linux/arm64/v8
         links:
             - mysql:mysql
         ports:
