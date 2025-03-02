@@ -17,8 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::post('posts', [PostController::class, 'store'])->name('posts.store');//投稿データ保存用ルート
 Route::get('/test', [TestController::class, 'test'])->name('test');
-Route::get('posts/create', [PostController::class, 'create'])->middleware(['auth'])->name('posts.create');
+Route::get('posts/create', [PostController::class, 'create'])->middleware(['auth'])->name('posts.create');//ビューファイル表示用ルート
 
 require __DIR__.'/auth.php';
