@@ -17,18 +17,22 @@
                 <div class="w-full flex flex-col">
                 <!-- 件名入力欄 -->
                     <label for="title" class="font-semibold mt-4">件名</label>
+                    <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     <input
                         type="text"
                         id="title"
                         name="title"
                         placeholder="件名を入力してください"
-                        class="w-auto py-2 border border-gray-300 round-md">
+                        class="w-auto py-2 border border-gray-300 round-md"
+                        value="{{ old('title') }}"
+                    >
                 </div>
             </div>
                 <!-- 本文入力欄 -->
             <div class="w-full flex flex-col">
                 <label for="body" class="font-semibold mt-4">本文</label>
-                    <textarea id="body"name="body"rows="5"placeholder="本文を入力してください"class="w-full py-2 border border-gray-300 rounded-md"></textarea>
+                <x-input-error :messages="$errors->get('body')" class="mt-2" />
+                    <textarea id="body" name="body" rows="5" placeholder="本文を入力してください" class="w-full py-2 border border-gray-300 rounded-md">{{ old('body') }}</textarea>
             </div>
 
                 <!-- 送信ボタン -->

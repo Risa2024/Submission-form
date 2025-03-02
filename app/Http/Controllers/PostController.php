@@ -11,10 +11,11 @@ class PostController extends Controller
         return view('posts.create');//postsフォルダのcreate.blade.phpを表示
     }
     public function store(Request $request) {
-        $post = Post::create([
-            'title' => $request->title,
-            'body' => $request->body,
+        $validated = $request->validate([
+            'title' => 'required|max:20',
+            'body' => 'required|max:400',
         ]);
+        $post = Post::create($validated);
         $request->session()->flash('message', '保存しました');
         return back();
     }
