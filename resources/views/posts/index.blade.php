@@ -16,7 +16,7 @@
             </p>
             <div class="p-4 text-sm font-semibold">
                 <p>
-                    {{$post->created_at}}
+                    {{$post->created_at}} / {{$post->user->name}}
                 </p>
             </div>
         </div>
