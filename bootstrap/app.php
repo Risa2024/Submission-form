@@ -10,9 +10,20 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
-        //
+    ->withMiddleware(function (Middleware $middleware)
+     {
+        $middleware->alias([
+            'admin' =>\App\Http\Middleware\RoleMiddleware::class
+        ]);
     })
+
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
+    })
+    //->withMiddlewareAliases([
+    //    'admin' => \App\Http\Middleware\RoleMiddleware::class,
+    //])
+    ->create();
+
+// ミドルウェアの登録
+$app->alias('admin', \App\Http\Middleware\RoleMiddleware::class);

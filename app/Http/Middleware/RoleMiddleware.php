@@ -13,17 +13,10 @@ class RoleMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
-{
-    if (!auth()->check() || auth()->user()->role !== 'admin') {
-        return redirect()->route('dashboard'); // 管理者以外はダッシュボードへ
+    public function handle(Request $request, Closure $next): Response {
+        if(auth()->user()->role == 'admin') {
+            return $next($request);
+        }
+        return redirect()->route('dashboard');
     }
-    return $next($request);
-}
-    //public function handle(Request $request, Closure $next): Response {
-    //    if(auth()->user()->role == 'admin') {
-    //        return $next($request);
-    //    }
-    //    return redirect()->route('dashboard');
-    //}
 }
