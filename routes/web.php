@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::post('posts', [PostController::class, 'store'])->name('posts.store');//投稿データ保存用ルート
 Route::get('/test', [TestController::class, 'test'])->name('test');
-Route::get('posts/create', [PostController::class, 'create'])->middleware(['auth'])->name('posts.create');
+Route::get('posts/create', [PostController::class, 'create'])->middleware('admin');
 Route::get('posts', [PostController::class, 'index']);
 
 require __DIR__.'/auth.php';
