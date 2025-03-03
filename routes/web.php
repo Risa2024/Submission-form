@@ -6,7 +6,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
