@@ -20,10 +20,4 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })
-    //->withMiddlewareAliases([
-    //    'admin' => \App\Http\Middleware\RoleMiddleware::class,
-    //])
     ->create();
-
-// ミドルウェアの登録
-$app->alias('admin', \App\Http\Middleware\RoleMiddleware::class);
