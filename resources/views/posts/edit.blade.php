@@ -12,9 +12,9 @@
             </div>
         @endif
 
+        <form method="post" action="{{ route('posts.update', $post) }}">
         @csrf
         @method('patch')
-        <form method="post" action="{{ route('posts.update', $post) }}">
             <div class="mt-8">
                 <div class="w-full flex flex-col">
                 <!-- 件名入力欄 -->

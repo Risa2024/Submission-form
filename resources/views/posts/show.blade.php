@@ -8,8 +8,15 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="mt-4 p-4">
             <h1 class="text-lg font-semibold">
-                {{ $post->title }}
+            {{ $post->title }}
             </h1>
+            <div class="text-right">
+            <a href="{{ route('posts.edit', $post) }}">
+                <x-primary-button>
+                    編集
+                </x-primary-button>
+            </a>
+            </div>
             <hr class="w-full">
             <p class="mt-4 whitespace-pre-line">
                 {{ $post->body }}
