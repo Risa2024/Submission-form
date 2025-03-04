@@ -22,7 +22,8 @@ Route::get('/test', [TestController::class, 'test'])->name('test');
 Route::get('posts/create', [PostController::class, 'create'])->middleware('admin')->name('posts.create');
 Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('post/show/{post}', [PostController::class, 'show'])->name('posts.show');
-
+Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::patch('post/{post}', [PostController::class, 'update'])->name('posts.update');
 
 require __DIR__.'/auth.php';
 
