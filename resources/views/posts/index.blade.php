@@ -8,7 +8,11 @@
         @foreach($posts as $post)
         <div class="mt-4 p-8 bg-white w-full rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
-                {{ $post->title }}
+                件名：
+                <a href="{{ route('posts.show', $post) }}"
+                class="text-blue-600 hover:text-blue-700">
+                    {{ $post->title }}
+                </a>
             </h1>
             <hr class="w-full">
             <p class="mt-4 p-4">
