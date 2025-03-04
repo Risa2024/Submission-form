@@ -45,5 +45,10 @@ class PostController extends Controller
     public function edit(Post $post) {
         return view('posts.edit', compact('post'));
     }
+    public function destroy(Request $request, Post $post) {
+        $post->delete();
+        $request->session()->flash('message', '削除しました');
+        return redirect()->route('posts.index');
+    }
 }
 
