@@ -5,13 +5,26 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+    <div class="max-auto px-6">
+        @foreach($posts as $post)
+        <div class="mt-4 p-8 bg-white w-full rounded-2xl">
+            <h1 class="p-4 text-lg font-semibold">
+                件名：
+                <a href="{{ route('posts.show', $post) }}"
+                class="text-blue-600 hover:text-blue-700">
+                    {{ $post->title }}
+                </a>
+            </h1>
+            <hr class="w-full">
+            <p class="mt-4 p-4">
+                {{ $post->body }}
+            </p>
+            <div class="p-4 text-sm font-semibold">
+                <p>
+                    {{$post->created_at}} / {{$post->user->name}}
+                </p>
             </div>
         </div>
+        @endforeach
     </div>
 </x-app-layout>
