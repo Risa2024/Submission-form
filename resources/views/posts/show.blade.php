@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="max-auto px-6">
-    <div class="mt-4 p-8 bg-white w-full rounded-2xl">
+    <div class="mt-8 p-8 m-8 bg-white rounded-2xl">
             <h1 class="text-lg font-semibold">
             {{ $post->title }}
             </h1>

@@ -7,7 +7,7 @@
 
     <div class="max-w-7xl mx-auto px-6">
         @if(session('message'))
-            <div class="text-red-600 font-bold">
+            <div class="p-4 rounded bg-blue-100 w-full">
                 {{ session('message') }}
             </div>
         @endif

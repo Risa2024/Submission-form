@@ -5,14 +5,13 @@
         </h2>
     </x-slot>
     {{-- CHAPTER10で追加 --}}
-        {{-- @if(session('message'))
-            <div class="text-red-600 font-bold">
+        @if(session('message'))
+            <div class="p-4 m-2 rounded bg-blue-100"></div>
                 {{session('message')}}
             </div>
-        @endif --}}
-        <x-message :message="session('message')" />
+        @endif
         @foreach($posts as $post)
-        <div class="mt-4 p-8 bg-white w-full rounded-2xl">
+        <div class="mt-8 p-8 m-8 bg-white rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
                 件名：
                 <a href="{{ route('posts.show', $post) }}"
