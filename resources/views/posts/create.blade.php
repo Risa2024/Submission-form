@@ -48,7 +48,6 @@
             const bodyTextarea = document.getElementById('body');
             const counter = document.getElementById('counter');
             const maxLength = 400;
-            // 初期表示時にカウンターを更新
             updateCounter();
             // テキストエリアの内容が変更されたらカウンターを更新
             bodyTextarea.addEventListener('input', updateCounter);
