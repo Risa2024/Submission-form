@@ -11,7 +11,11 @@ class PostController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {// ユーザーが初めてアクセスした時のみメッセージを表示
+        if (!session()->has('welcomed')) {
+            session(['welcomed' => true]);
+            session()->flash('message', 'お帰りなさい、' . auth()->user()->name . 'さん 🙌');
+        }
         //$posts = Post::all();
         $posts = Post::paginate(10);
         return view('posts.index', compact('posts'));

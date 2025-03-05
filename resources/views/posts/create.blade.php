@@ -33,6 +33,7 @@
                 <label for="body" class="font-semibold mt-4">本文</label>
                 <x-input-error :messages="$errors->get('body')" class="mt-2" />
                     <textarea id="body" name="body" rows="5" placeholder="本文を入力してください" class="w-full py-2 border border-gray-300 rounded-md">{{ old('body') }}</textarea>
+                <div id="counter" class="text-right text-sm text-gray-500 mt-1">0 / 400文字</div>
             </div>
 
                 <!-- 送信ボタン -->
@@ -41,4 +42,20 @@
             </x-primary-button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bodyTextarea = document.getElementById('body');
+            const counter = document.getElementById('counter');
+            const maxLength = 400;
+            // 初期表示時にカウンターを更新
+            updateCounter();
+            // テキストエリアの内容が変更されたらカウンターを更新
+            bodyTextarea.addEventListener('input', updateCounter);
+            function updateCounter() {
+                const currentLength = bodyTextarea.value.length;
+                counter.textContent = `${currentLength} / ${maxLength}文字`;
+            }
+        });
+    </script>
 </x-app-layout>
