@@ -28,12 +28,15 @@
                     >
                 </div>
             </div>
+                <!-- 本文入力欄 -->
             <div class="w-full flex flex-col">
                 <label for="body" class="font-semibold mt-4">本文</label>
                 <x-input-error :messages="$errors->get('body')" class="mt-2" />
                 <textarea id="body" name="body" rows="5" placeholder="本文を入力してください" class="w-full py-2 border border-gray-300 rounded-md">{{ old('body', $post->body) }}</textarea>
                 <div id="counter" class="text-right text-sm text-gray-500 mt-1">0 / 400文字</div>
             </div>
+
+                <!-- 送信ボタン -->
             <x-primary-button class="mt-4">
                 送信する
             </x-primary-button>
