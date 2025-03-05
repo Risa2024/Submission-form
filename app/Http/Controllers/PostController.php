@@ -26,6 +26,10 @@ class PostController extends Controller
      */
     public function create()
     {
+        // 「お帰りなさい」メッセージをセッションから削除
+        if (session()->has('message') && str_contains(session('message'), 'お帰りなさい')) {
+            session()->forget('message');
+        }
         return view('posts.create');
     }
 

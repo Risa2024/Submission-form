@@ -27,8 +27,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        
+        // ログイン成功時に「お帰りなさい」メッセージを表示
+        session()->flash('message', 'お帰りなさい、' . Auth::user()->name . 'さん 🙌');
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // 直接ダッシュボードルートを指定（RouteServiceProvider::HOMEの代わり）
+        return redirect()->intended('/dashboard');
     }
 
     /**
