@@ -6,7 +6,7 @@
     </x-slot>
     {{-- CHAPTER10で追加 --}}
         @if(session('message'))
-            <div class="p-4 m-2 rounded bg-blue-100"></div>
+            <div class="p-4 m-2 rounded bg-blue-100">
                 {{session('message')}}
             </div>
         @endif

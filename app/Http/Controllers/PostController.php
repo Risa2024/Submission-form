@@ -68,7 +68,7 @@ class PostController extends Controller
         $validated['user_id'] = auth()->id();
         $post->update($validated);
         $request->session()->flash('message', '更新しました');
-        return back();
+        return redirect()->route('posts.index');
     }
     /**
      * Remove the specified resource from storage.

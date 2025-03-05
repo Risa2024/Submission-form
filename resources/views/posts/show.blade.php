@@ -16,7 +16,7 @@
                     編集
                 </x-primary-button>
                 </a>
-                <form method="post" action="{{ route('posts.destroy', $post) }}">
+                <form method="post" action="{{ route('posts.destroy', $post) }}" onsubmit="return confirm('本当に削除してもよろしいですか？');">
                 @csrf
                 @method('delete')
                 <x-primary-button class="bg-red-700 ml-2">
