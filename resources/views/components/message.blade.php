@@ -1,3 +1,6 @@
-<div>
-    <!-- Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. - Marie Curie -->
-</div>
+@props(['message'])
+@if ($message)
+    <div class="p-4 m-2 rounded bg-green-100">
+    {{$message}}
+    </div>
+@endif

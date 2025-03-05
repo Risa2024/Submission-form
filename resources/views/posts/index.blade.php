@@ -4,12 +4,13 @@
             一覧表示
         </h2>
     </x-slot>
-    <div class="max-auto px-6">
-        @if(session('message'))
+    {{-- CHAPTER10で追加 --}}
+        {{-- @if(session('message'))
             <div class="text-red-600 font-bold">
-                {{ session('message') }}
+                {{session('message')}}
             </div>
-        @endif
+        @endif --}}
+        <x-message :message="session('message')" />
         @foreach($posts as $post)
         <div class="mt-4 p-8 bg-white w-full rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
