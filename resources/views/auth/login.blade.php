@@ -1,10 +1,13 @@
+
 <x-guest-layout>
+<div class="flex flex-col items-center justify-center">
+<img src="{{ asset('img/bee.png') }}" width="20%" class="mb-4">
     <!-- Session Status -->
+</div>
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />

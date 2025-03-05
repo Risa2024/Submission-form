@@ -11,7 +11,7 @@
             </div>
         @endif
         @foreach($posts as $post)
-        <div class="mt-8 p-8 m-8 bg-white rounded-2xl">
+        <div class="mt-8 p-8 mx-auto max-w-7xl bg-white rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
                 件名：
                 <a href="{{ route('posts.show', $post) }}"
