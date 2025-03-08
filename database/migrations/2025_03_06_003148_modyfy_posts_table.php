@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up()//up()は新機能を追加するときの処理
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
@@ -20,7 +20,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down()//down()は追加した機能を取り消すときの処理
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
