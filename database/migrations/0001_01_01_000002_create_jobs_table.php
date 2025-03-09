@@ -3,14 +3,14 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+// 時間のかかる作業（ジョブ）を管理するためのテーブルを作る設計図
 return new class extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
-    {
+    {// 1. 実行待ちの作業を管理するテーブル
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('queue')->index();
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('available_at');
             $table->unsignedInteger('created_at');
         });
-
+ // 2. 複数の関連作業（バッチ）を管理するテーブル
         Schema::create('job_batches', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->integer('created_at');
             $table->integer('finished_at')->nullable();
         });
-
+ // 3. 失敗した作業を記録するテーブル
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
@@ -55,3 +55,8 @@ return new class extends Migration
         Schema::dropIfExists('failed_jobs');
     }
 };
+//これらのテーブルは：
+//重い処理を後回しにして
+//ユーザーをお待たせせずに
+//確実に処理を完了させる
+//ための仕組みを提供する！
