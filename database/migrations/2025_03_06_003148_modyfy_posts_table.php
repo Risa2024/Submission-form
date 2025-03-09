@@ -20,7 +20,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()//down()は追加した機能を取り消すときの処理
+    public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
