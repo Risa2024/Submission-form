@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0643f83f6f8f7b44eec08a97de236b37",
+    "content-hash": "557a593a51e92d96012f8781f0e7d58d",
     "packages": [
         {
             "name": "brick/math",
@@ -5802,16 +5802,16 @@
     "packages-dev": [
         {
             "name": "askdkc/breezejp",
-            "version": "v2.2.3",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/askdkc/breezejp.git",
-                "reference": "a18c00d87c266d4fdba1bb2ae76f8adef3a4afdf"
+                "reference": "f1890ea318c0fb37d25e04c3de1b33c79c0a3504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/askdkc/breezejp/zipball/a18c00d87c266d4fdba1bb2ae76f8adef3a4afdf",
-                "reference": "a18c00d87c266d4fdba1bb2ae76f8adef3a4afdf",
+                "url": "https://api.github.com/repos/askdkc/breezejp/zipball/f1890ea318c0fb37d25e04c3de1b33c79c0a3504",
+                "reference": "f1890ea318c0fb37d25e04c3de1b33c79c0a3504",
                 "shasum": ""
             },
             "require": {
@@ -5868,7 +5868,7 @@
             ],
             "support": {
                 "issues": "https://github.com/askdkc/breezejp/issues",
-                "source": "https://github.com/askdkc/breezejp/tree/v2.2.3"
+                "source": "https://github.com/askdkc/breezejp/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -5880,7 +5880,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2025-02-28T23:26:46+00:00"
+            "time": "2025-03-09T02:44:59+00:00"
         },
         {
             "name": "fakerphp/faker",
