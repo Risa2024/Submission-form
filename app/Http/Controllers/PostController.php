@@ -44,10 +44,8 @@ class PostController extends Controller
         ]);
         $validated['user_id'] = auth()->id();
         $post = Post::create($validated);
-        
         // ウェルカムメッセージが表示されないようにする
         session(['welcomed' => true]);
-        
         $request->session()->flash('message', '保存しました');
         return redirect()->route('posts.index');
     }
@@ -79,10 +77,8 @@ class PostController extends Controller
         ]);
         $validated['user_id'] = auth()->id();
         $post->update($validated);
-        
         // ウェルカムメッセージが表示されないようにする
         session(['welcomed' => true]);
-        
         $request->session()->flash('message', '更新しました');
         return redirect()->route('posts.index');
     }
@@ -92,10 +88,8 @@ class PostController extends Controller
     public function destroy(Request $request, Post $post)
     {
         $post->delete();
-        
         // ウェルカムメッセージが表示されないようにする
         session(['welcomed' => true]);
-        
         $request->session()->flash('message', '削除しました');
         return redirect()->route('posts.index');
     }
