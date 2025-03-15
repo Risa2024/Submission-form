@@ -14,7 +14,7 @@ class PostController extends Controller
     {// ユーザーが初めてアクセスした時のみメッセージを表示
         if (!session()->has('welcomed')) {
             session(['welcomed' => true]);
-            session()->flash('message', 'お帰りなさい、' . auth()->user()->name . 'さん 🙌');
+            session()->flash('welcome', 'お帰りなさい、' . auth()->user()->name . 'さん 🙌');
         }
         //$posts = Post::all();
         $posts = Post::paginate(10);
