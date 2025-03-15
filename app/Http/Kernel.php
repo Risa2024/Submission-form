@@ -41,5 +41,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         // 管理者権限チェック
         'admin' => \App\Http\Middleware\RoleMiddleware::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 }
