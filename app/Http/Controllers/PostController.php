@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 
 class PostController extends Controller
 {
@@ -93,4 +94,4 @@ class PostController extends Controller
         $request->session()->flash('message', '削除しました');
         return redirect()->route('posts.index');
     }
-}
+    }
