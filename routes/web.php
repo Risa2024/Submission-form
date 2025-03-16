@@ -18,12 +18,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('posts', PostController::class);
-    //Route::get('/dashboard', [PostController::class, 'index'])->middleware(['auth'])->name('dashboard');
-});
 
-Route::post('/posts', [PostController::class, 'store'])
-    ->middleware(RateLimitMiddleware::class);
+    // store アクション以外のリソースルート
+    Route::resource('posts', PostController::class)->except('store');
+    
+    // store アクションのみ別途定義してレートリミットを適用
+    Route::post('/posts', [PostController::class, 'store'])
+        ->name('posts.store')
+        ->middleware(RateLimitMiddleware::class);
+});
 
 require __DIR__.'/auth.php';
 
